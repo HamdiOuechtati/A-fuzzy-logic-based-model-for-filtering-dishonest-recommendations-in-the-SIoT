@@ -1,0 +1,40 @@
+[System]
+Name='UntitledCollusion attack'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Similarity'
+Range=[0 1]
+NumMFs=3
+MF1='Low':'trimf',[-0.4 0 0.4]
+MF2='Medium':'trimf',[0.1 0.5 0.9]
+MF3='High':'trimf',[0.6 1 1.4]
+
+[Input2]
+Name='Degree-of-social-relationship'
+Range=[0 1]
+NumMFs=3
+MF1='Low':'trimf',[-0.4 0 0.4]
+MF2='Medium':'trimf',[0.1 0.5 0.9]
+MF3='High':'trimf',[0.6 1 1.4]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=5
+MF1='VeryLow':'trapmf',[-0.233 -0.0329 0.00127 0.19973544973545]
+MF2='Low':'trapmf',[0.025 0.2 0.286073825503356 0.451]
+MF3='Medium':'trapmf',[0.275 0.421957671957672 0.525 0.697]
+MF4='High':'trapmf',[0.525 0.691798941798942 0.775 0.975]
+MF5='VeryHigh':'trapmf',[0.804100529100529 1.00410052910053 1.05410052910053 1.25410052910053]
+
+[Rules]

@@ -1,0 +1,70 @@
+[System]
+Name='trustlevel'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='OS'
+Range=[0 1]
+NumMFs=5
+MF1='Veryhigh':'trimf',[-0.25 0 0.25]
+MF2='high':'trimf',[0 0.25 0.5]
+MF3='medium':'trimf',[0.25 0.5 0.75]
+MF4='low':'trimf',[0.5 0.75 1]
+MF5='verylow':'trimf',[0.75 1 1.25]
+
+[Input2]
+Name='DRS'
+Range=[0 1]
+NumMFs=5
+MF1='verylow':'trapmf',[-0.0876 -0.00317 0.36 0.55]
+MF2='low':'trimf',[0.4 0.55 0.65]
+MF3='medium':'trimf',[0.55 0.7 0.8]
+MF4='high':'trimf',[0.65 0.8 0.9]
+MF5='veryhigh':'trapmf',[0.8 0.9 0.9989 1.18]
+
+[Output1]
+Name='trustlevel'
+Range=[0 1]
+NumMFs=6
+MF1='verybad':'trimf',[-0.2 3.469e-18 0.2]
+MF2='bad':'trimf',[0 0.2 0.4]
+MF3='unpreferable':'trimf',[0.2 0.4 0.6]
+MF4='acceptable':'trimf',[0.4 0.6 0.8]
+MF5='good':'trimf',[0.6 0.8 1]
+MF6='perfect':'trimf',[0.8 1 1.2]
+
+[Rules]
+5 1, 1 (1) : 1
+5 2, 1 (1) : 1
+5 3, 2 (1) : 1
+5 4, 2 (1) : 1
+5 5, 3 (1) : 1
+4 1, 1 (1) : 1
+4 2, 2 (1) : 1
+4 3, 3 (1) : 1
+4 4, 3 (1) : 1
+4 5, 4 (1) : 1
+3 1, 2 (1) : 1
+3 2, 3 (1) : 1
+3 3, 4 (1) : 1
+3 4, 4 (1) : 1
+3 5, 5 (1) : 1
+2 1, 4 (1) : 1
+2 2, 4 (1) : 1
+2 3, 5 (1) : 1
+2 4, 5 (1) : 1
+2 5, 6 (1) : 1
+1 1, 4 (1) : 1
+1 2, 4 (1) : 1
+1 3, 5 (1) : 1
+1 4, 6 (1) : 1
+1 5, 6 (1) : 1

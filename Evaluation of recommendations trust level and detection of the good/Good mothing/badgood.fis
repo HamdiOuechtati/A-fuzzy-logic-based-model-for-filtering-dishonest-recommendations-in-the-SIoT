@@ -1,0 +1,69 @@
+[System]
+Name='badgood'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='IS'
+Range=[0 1]
+NumMFs=5
+MF1='VeryHigh':'trimf',[-0.25 0 0.25]
+MF2='High':'trimf',[0 0.25 0.5]
+MF3='Medium':'trimf',[0.25 0.5 0.75]
+MF4='Low':'trimf',[0.5 0.75 1]
+MF5='VeryLow':'trimf',[0.75 1 1.25]
+
+[Input2]
+Name='ES'
+Range=[0 1]
+NumMFs=5
+MF1='VeryHigh':'trimf',[-0.25 0 0.25]
+MF2='High':'trimf',[0 0.25 0.5]
+MF3='Medium':'trimf',[0.25 0.5 0.75]
+MF4='Low':'trimf',[0.5 0.75 1]
+MF5='VeryLow':'trimf',[0.75 1 1.25]
+
+[Output1]
+Name='OS'
+Range=[0 1]
+NumMFs=5
+MF1='VeryHigh':'trimf',[-0.25 0 0.25]
+MF2='High':'trimf',[0 0.25 0.5]
+MF3='Medium':'trimf',[0.25 0.5 0.75]
+MF4='Low':'trimf',[0.5 0.75 1]
+MF5='VeryLow':'trimf',[0.75 1 1.25]
+
+[Rules]
+5 5, 5 (1) : 1
+5 4, 5 (1) : 1
+5 3, 4 (1) : 1
+5 2, 3 (1) : 1
+5 1, 2 (1) : 1
+4 5, 5 (1) : 1
+4 4, 4 (1) : 1
+4 3, 3 (1) : 1
+4 2, 3 (1) : 1
+4 1, 2 (1) : 1
+3 5, 4 (1) : 1
+3 4, 3 (1) : 1
+3 3, 3 (1) : 1
+3 2, 2 (1) : 1
+3 1, 2 (1) : 1
+2 5, 4 (1) : 1
+2 4, 3 (1) : 1
+2 3, 3 (1) : 1
+2 2, 2 (1) : 1
+2 1, 1 (1) : 1
+1 5, 5 (1) : 1
+1 4, 3 (1) : 1
+1 3, 4 (1) : 1
+1 2, 1 (1) : 1
+1 1, 1 (1) : 1

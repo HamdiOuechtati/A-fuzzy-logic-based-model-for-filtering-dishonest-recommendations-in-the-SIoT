@@ -1,0 +1,48 @@
+[System]
+Name='sybilattaque'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='classtype'
+Range=[0 1]
+NumMFs=2
+MF1='very-high':'trapmf',[-0.9 -0.1 0.5 0.75]
+MF2='Relatively-high':'trapmf',[0.49154334038055 0.775 1.1 1.9]
+
+[Input2]
+Name='Inrenalsimilarite'
+Range=[0 1]
+NumMFs=5
+MF1='very-high':'trimf',[-0.25 0 0.127906976744186]
+MF2='high':'trimf',[0 0.162 0.261099365750529]
+MF3='meduim':'trimf',[0.168 0.343551797040169 0.608]
+MF4='low':'trimf',[0.36046511627907 0.574 0.894]
+MF5='very-low':'trimf',[0.644291754756871 0.894291754756871 1.14429175475687]
+
+[Output1]
+Name='initialtrust'
+Range=[0 1]
+NumMFs=2
+MF1='no-acceptable':'trapmf',[-0.9 -0.1 0.618393234672304 0.792]
+MF2='acceptable':'trapmf',[0.590909090909091 0.792 1.1 1.9]
+
+[Rules]
+1 1, 2 (1) : 1
+1 2, 2 (1) : 1
+1 3, 1 (1) : 1
+1 4, 1 (1) : 1
+1 5, 1 (1) : 1
+2 1, 2 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+2 4, 1 (1) : 1
+2 5, 1 (1) : 1
