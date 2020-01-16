@@ -16,3 +16,14 @@ Quick installation:
 -The 'Current Folder' menu should now show the folder 'Evaluation of recommendations trust level and detection of the good', 'Fuzzy classification approach' and 'Test Welcoxon'.
 
 Now you can use the functions in the command prompt of MATLAB
+
+
+#Components
+
+The 'Fuzzy classification approach' folder contains 31 rounds  folders for each approach without and with evaluation of similarity.  Each round folder  ('round 1', round 2, ......round 31) contains:
+
+The 'Fuzzyclassification1.m' provides the main script for running the approach without  evaluation of similarity. You provide it  an input text file of data 'data.xlsx' as well as an output  text file of data 'data1.xls' using 'Fuzzy classification approach.fis'. 
+
+The 'datainitialtrustD50.m' provides the main script for for extraction data from  'data.xls'   and  'ISD50.xlsx'.  
+
+The   'InitialtrustD50.m' provides the main script for running the approach witht  evaluation of similarity. You provide it  an input and output text file of data  'datainitialtrustD50.xls' using 'sybilattaque.fis'.
